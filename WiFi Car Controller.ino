@@ -4,11 +4,11 @@
   Status: Done
 */
 
-// Include the libraries
+//include the libraries
 #include <ESP8266WiFi.h>
 #include <BlynkSimpleEsp8266.h>
 
-// Define the motor pins
+//define the motor pins
 #define ENA D0
 #define IN1 D1
 #define IN2 D2
@@ -16,25 +16,24 @@
 #define IN4 D4
 #define ENB D5
 
-// Variables for the Blynk widget values
+//initialize variables for Blynk's widget values
 int x = 50;
 int y = 50;
 int Speed;
 
-//Blynk setup
+//blynk setup
 char auth[] = "your-auth-token"; // Enter your Blynk's auth token
 char ssid[] = "your-wifi-host"; // Enter your WIFI name
 char pass[] = "your-wifi-password"; // Enter your WIFI passowrd
 
-// Get the joystick values
 BLYNK_WRITE(V0) {
-  x = param[0].asInt(); //x axis
+  x = param[0].asInt(); //get joystick's x axis values
 }
 BLYNK_WRITE(V1) {
-  y = param[0].asInt(); //y axis
+  y = param[0].asInt(); //get joystick's y axis values
 }
 BLYNK_WRITE(V2) {
-  Speed = param.asInt(); //Get the speed values as slider
+  Speed = param.asInt(); //get speed values as slider
 }
 
 /************** Motor movement functions *****************/
@@ -77,7 +76,7 @@ void car_stop() {
   digitalWrite(IN4, LOW);
 }
 
-// Processing input values
+//processing input values
 void running() {
   if (y > 70) {
     car_forward();
@@ -97,10 +96,10 @@ void running() {
   }
 }
 
-// Setup function
+//setup function
 void setup() {
   Serial.begin(9600);
-  // Set the motor pins as output pins
+  //set the motor pins as output pins
   pinMode(ENA, OUTPUT);
   pinMode(IN1, OUTPUT);
   pinMode(IN2, OUTPUT);
@@ -108,11 +107,11 @@ void setup() {
   pinMode(IN4, OUTPUT);
   pinMode(ENB, OUTPUT);
 
-  // Initialize Blynk
+  //initialize Blynk
   Blynk.begin(auth, ssid, pass, "blynk.cloud", 80);
 }
 
-// Main loop
+//main loop
 void loop() {
   Blynk.run(); //Call Blynk function
   running(); //Call the main function
