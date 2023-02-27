@@ -9,12 +9,12 @@
 #include <BlynkSimpleEsp8266.h>
 
 //define the motor pins
-#define ENA D0
-#define IN1 D1
-#define IN2 D2
-#define IN3 D3
-#define IN4 D4
-#define ENB D5
+#define ENA D5
+#define ENB D6
+#define IN1 D8
+#define IN2 D7
+#define IN3 D4
+#define IN4 D3
 
 //initialize variables for Blynk's widget values
 int x = 50;
