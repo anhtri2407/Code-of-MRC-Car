@@ -10,12 +10,12 @@
 #include <SoftwareSerial.h>
 
 //setup motor pins
-#define ENA 10
-#define ENB 5
+#define ENA 5
+#define ENB 6
 #define IN1 9
-#define IN2 8
-#define IN3 7
-#define IN4 6
+#define IN2 10
+#define IN3 11
+#define IN4 12
 
 //initialize variables for motors
 short M1_Speed = 120; // speed of motor 1 
@@ -24,7 +24,7 @@ short LeftRotationSpeed = 250;  // Left Rotation Speed
 short RightRotationSpeed = 250; // Right Rotation Speed
 
 //setup bluetooth
-SoftwareSerial BTSerial(2, 3); // RX | TX  --->TX  | RX (HC-05)
+// SoftwareSerial BTSerial(2, 3); // RX | TX  --->  TX | RX (HC-05) if you don't want to use pin 0 (RX) and pin 1 (TX)
 char read_variable;
 
 //main car movements function
