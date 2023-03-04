@@ -12,10 +12,10 @@
 //setup motor pins
 #define ENA 5
 #define ENB 6
-#define IN1 9
-#define IN2 10
-#define IN3 11
-#define IN4 12
+#define IN1 12
+#define IN2 11
+#define IN3 10
+#define IN4 9
 
 //initialize variables for motors
 short M1_Speed = 120; // speed of motor 1 
