@@ -69,7 +69,7 @@ void car_stop() {
 
 void setup() {
   Serial.begin(9600);
-  BTSerial.begin(9600); //HC-05 default speed to communicate with serial monitor
+//   BTSerial.begin(9600); //HC-05 default speed to communicate with serial monitor
   pinMode(IN1, OUTPUT);
   pinMode(IN2, OUTPUT);
   pinMode(IN3, OUTPUT);
