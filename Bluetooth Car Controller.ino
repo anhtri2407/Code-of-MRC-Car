@@ -7,7 +7,7 @@
 */
 
 //include the libraries
-#include <SoftwareSerial.h>
+// #include <SoftwareSerial.h>
 
 //setup motor pins
 #define ENA 5
@@ -80,10 +80,11 @@ void setup() {
 
 void loop() {
   //read bluetooth's variable from serial monitor
-  if (BTSerial.available() > 0){
-    read_variable = BTSerial.read();
-    Serial.println(read_variable);
-  }
+//   if (BTSerial.available() > 0){
+//     read_variable = BTSerial.read();
+//     Serial.println(read_variable);
+//   }
+  if (Serial.available() > 0) read_variable = Serial.read();
   //processing input values
   switch (read_variable) {
     case 'F': 
